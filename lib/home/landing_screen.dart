@@ -10,8 +10,10 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("data"),
+    return Scaffold(
+      body: Container(
+        child: Text("data"),
+      ),
     );
   }
 }
