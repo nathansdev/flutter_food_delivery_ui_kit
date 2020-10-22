@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
+import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
@@ -85,6 +85,9 @@ class IntroScreen extends StatelessWidget {
               borderRadius: 30,
               fontSize: 17,
               fontWeight: FontWeight.w600,
+              onTap: () {
+                Navigator.pushNamed(context, Routes.login);
+              },
             ),
           )
         ],

@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Food Delivery App - Flutter',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'SF Pro Rounded',
         primarySwatch: Colors.blue,
