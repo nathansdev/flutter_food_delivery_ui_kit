@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_food_delivery_app/home/main_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/navigation_screen.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [NavigationScreen()],
+        children: [NavigationScreen(), MainScreen()],
       ),
     );
   }
