@@ -9,3 +9,4 @@ const vermilion_100 = Color(0xFFFF470B);
 const silver = Color(0xFFBCBABA);
 const athens_gray = Color(0xFFF6F6F9);
 const black_05 = Color(0x0D000000);
+const athens_gray_one = Color(0xFFF4F4F8);

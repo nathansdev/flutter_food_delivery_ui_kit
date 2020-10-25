@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
+import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_input.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
@@ -67,7 +68,9 @@ class _LoginInputScreenState extends State<LoginInputScreen> {
                 borderRadius: 30,
                 fontSize: 17,
                 fontWeight: FontWeight.w600,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.home);
+                },
                 text: "Login",
                 textColor: athens_gray)
           ],

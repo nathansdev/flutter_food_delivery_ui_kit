@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_food_delivery_app/home/navigation_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   LandingScreen({Key key}) : super(key: key);
@@ -11,8 +12,8 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("data"),
+      body: Stack(
+        children: [NavigationScreen()],
       ),
     );
   }

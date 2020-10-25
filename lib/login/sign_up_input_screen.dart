@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
+import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_input.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
@@ -80,8 +81,10 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
                 borderRadius: 30,
                 fontSize: 17,
                 fontWeight: FontWeight.w600,
-                onTap: () {},
-                text: "Login",
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.home);
+                },
+                text: "Sign-up",
                 textColor: athens_gray)
           ],
         ),
