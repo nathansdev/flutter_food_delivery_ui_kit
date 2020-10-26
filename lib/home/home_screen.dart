@@ -22,13 +22,14 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void initState() {
-    foods.add(Food());
-    foods.add(Food());
-    foods.add(Food());
-    foods.add(Food());
-    foods.add(Food());
-    foods.add(Food());
-    foods.add(Food());
+    foods.add(Food(id: 1, name: "", image: "assets/images/foods/one.png"));
+    foods.add(Food(id: 2, name: "", image: "assets/images/foods/two.png"));
+    foods.add(Food(id: 3, name: "", image: "assets/images/foods/three.png"));
+    foods.add(Food(id: 4, name: "", image: "assets/images/foods/four.png"));
+    foods.add(Food(id: 5, name: "", image: "assets/images/foods/one.svg"));
+    foods.add(Food(id: 6, name: "", image: "assets/images/foods/two.svg"));
+    foods.add(Food(id: 7, name: "", image: "assets/images/foods/three.svg"));
+    foods.add(Food(id: 8, name: "", image: "assets/images/foods/four.svg"));
 
     tabs.add(Tab(
       text: "Foods",
@@ -42,6 +43,16 @@ class _HomeScreenState extends State<HomeScreen>
     tabs.add(Tab(
       text: "Sauce",
     ));
+    contents.add(ListView.builder(
+      shrinkWrap: true,
+      itemBuilder: (BuildContext context, int index) {
+        return FoodItemWidget(
+          food: foods[index],
+        );
+      },
+      scrollDirection: Axis.horizontal,
+      itemCount: foods.length,
+    ));
     contents.add(Container(
         padding: EdgeInsets.symmetric(vertical: 8),
         child: ListView.builder(
@@ -78,19 +89,6 @@ class _HomeScreenState extends State<HomeScreen>
           scrollDirection: Axis.horizontal,
           itemCount: foods.length,
         )));
-    contents.add(Container(
-        padding: EdgeInsets.symmetric(vertical: 8),
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) {
-            return FoodItemWidget(
-              food: foods[index],
-            );
-          },
-          scrollDirection: Axis.horizontal,
-          itemCount: foods.length,
-        )));
-
     super.initState();
     _tabController =
         TabController(length: tabs.length, vsync: this, initialIndex: 0);
@@ -121,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen>
                     size: 34,
                     color: Colors.black,
                     weight: FontWeight.bold,
+                    textAlign: TextAlign.start,
                   ),
                 ),
               ),
@@ -141,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
           TabBar(
+            isScrollable: true,
             tabs: tabs,
             labelColor: vermilion,
             labelStyle: TextStyle(color: vermilion, fontSize: 17),
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen>
             },
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.35,
             child: IndexedStack(
               children: contents,
               index: selectedIndex,
@@ -170,6 +170,7 @@ class _HomeScreenState extends State<HomeScreen>
 
 class Food {
   final String name;
-  final String id;
-  Food({this.name, this.id});
+  final int id;
+  final String image;
+  Food({this.name, this.id, this.image});
 }

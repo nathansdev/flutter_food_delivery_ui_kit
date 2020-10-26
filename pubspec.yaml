@@ -25,6 +25,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/fonts/
+    - assets/images/foods/
 
   fonts:
     - family: SF Pro Rounded

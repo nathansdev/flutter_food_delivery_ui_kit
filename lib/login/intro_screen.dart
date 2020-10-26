@@ -45,6 +45,7 @@ class IntroScreen extends StatelessWidget {
                   color: Colors.white,
                   text: "Food for Everyone",
                   weight: FontWeight.w800,
+                  textAlign: TextAlign.start,
                 ),
               ),
             ],

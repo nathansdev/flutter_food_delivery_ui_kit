@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_food_delivery_app/home/detail_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/home_screen.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
@@ -9,43 +10,68 @@ class FoodItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          boxShadow: [BoxShadow(color: Colors.white, offset: Offset(0, 0))],
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30)),
-      margin: EdgeInsets.all(10),
-      child: Stack(
-        children: [
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 60,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(food: food),
+          ),
+        );
+        // Navigator.of(context).pushNamed(Routes.detail);
+      },
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.31,
+        padding: EdgeInsets.all(6),
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.height * 0.27,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(color: Colors.white, offset: Offset(0, 0))
+                    ],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)),
+                margin: EdgeInsets.all(4),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: AppText(
+                        text: "Veggie tomato mix",
+                        color: black_90,
+                        size: 22,
+                        weight: FontWeight.w600,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: AppText(
+                        text: "N1,900",
+                        color: vermilion,
+                        size: 17,
+                        weight: FontWeight.bold,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: AppText(
-                    text: "Veggie tomato mix",
-                    color: black_90,
-                    size: 22,
-                    weight: FontWeight.w600,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: AppText(
-                    text: "N1,900",
-                    color: vermilion,
-                    size: 17,
-                    weight: FontWeight.bold,
-                  ),
-                )
-              ],
+              ),
             ),
-          )
-        ],
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage(food.image),
+            )
+          ],
+        ),
       ),
     );
   }

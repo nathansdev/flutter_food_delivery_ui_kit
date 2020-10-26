@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_food_delivery_app/home/detail_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/landing_screen.dart';
 import 'package:flutter_ui_food_delivery_app/login/intro_screen.dart';
 import 'package:flutter_ui_food_delivery_app/login/login_screen.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.home: (context) => LandingScreen(),
         Routes.login: (context) => LoginScreen(),
-        Routes.intro: (context) => IntroScreen()
+        Routes.intro: (context) => IntroScreen(),
+        Routes.detail: (context) => DetailScreen()
       },
     );
   }

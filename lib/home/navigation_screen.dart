@@ -56,6 +56,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                           size: 17,
                           weight: FontWeight.w600,
                           color: Colors.white,
+                          textAlign: TextAlign.start,
                         )
                       ],
                     ),
@@ -87,6 +88,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                     size: 17,
                     weight: FontWeight.w600,
                     color: Colors.white,
+                    textAlign: TextAlign.start,
                   ),
                   SizedBox(
                     width: 20,

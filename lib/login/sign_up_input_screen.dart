@@ -73,6 +73,7 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
                   size: 17,
                   weight: FontWeight.w600,
                   text: "Forgot passcode?",
+                  textAlign: TextAlign.start,
                 ),
               ),
             ),

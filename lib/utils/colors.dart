@@ -13,3 +13,4 @@ const athens_gray_one = Color(0xFFF4F4F8);
 const gallery = Color(0xFFEFEEEE);
 const black_50 = Color(0x80000000);
 const black_90 = Color(0xE6000000);
+const silver_one = Color(0xFFC4C4C4);

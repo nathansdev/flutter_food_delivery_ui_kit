@@ -24,6 +24,7 @@ class _AppInputTextState extends State<AppInputText> {
           color: black_05,
           size: 15,
           weight: FontWeight.w600,
+          textAlign: TextAlign.start,
         ),
         SizedBox(
           height: 10,
