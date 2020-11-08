@@ -4,7 +4,9 @@ import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class NavigationScreen extends StatefulWidget {
-  NavigationScreen({Key key}) : super(key: key);
+  final bool collabsed;
+
+  NavigationScreen({this.collabsed});
 
   @override
   _NavigationScreenState createState() => _NavigationScreenState();
@@ -32,7 +34,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
     double sizeHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
-          color: vermilion, borderRadius: BorderRadius.circular(24)),
+          color: vermilion,
+          borderRadius: BorderRadius.circular(widget.collabsed ? 24 : 0)),
       child: Column(
         children: [
           Expanded(

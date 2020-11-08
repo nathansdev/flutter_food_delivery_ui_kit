@@ -14,3 +14,4 @@ const gallery = Color(0xFFEFEEEE);
 const black_50 = Color(0x80000000);
 const black_90 = Color(0xE6000000);
 const silver_one = Color(0xFFC4C4C4);
+const alabaster = Color(0xFFF9F9F9);

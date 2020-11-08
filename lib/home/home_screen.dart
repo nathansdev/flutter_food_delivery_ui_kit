@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
+import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/food_item_widget.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/search_box.dart';
@@ -134,9 +135,12 @@ class _HomeScreenState extends State<HomeScreen>
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: SearchBox(
-              enable: true,
+              enable: false,
               hint: "Search",
               controller: _controller,
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.search);
+              },
             ),
           ),
           TabBar(

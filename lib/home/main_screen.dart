@@ -4,7 +4,9 @@ import 'package:flutter_ui_food_delivery_app/home/home_screen.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({Key key}) : super(key: key);
+  final VoidCallback onTap;
+  final bool collabsed;
+  MainScreen({this.onTap, this.collabsed});
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -63,29 +65,38 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(widget.collabsed ? 24 : 0)),
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
               children: [
-                SvgPicture.asset(
-                  "assets/icons/navigation.svg",
-                  width: 24,
-                  height: 24,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
                 ),
-                SvgPicture.asset(
-                  "assets/icons/cart.svg",
-                  width: 24,
-                  height: 24,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: SvgPicture.asset(
+                        "assets/icons/navigation.svg",
+                        width: 24,
+                        height: 24,
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      "assets/icons/cart.svg",
+                      width: 24,
+                      height: 24,
+                    ),
+                  ],
                 ),
+                widgets.elementAt(_selectedIndex),
               ],
             ),
-            widgets.elementAt(_selectedIndex),
-          ],
+          ),
         ),
       ),
     );

@@ -71,10 +71,11 @@ class _DetailScreenState extends State<DetailScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.arrow_back_ios,
-                        size: 24,
-                        color: Colors.black,
+                      IconButton(
+                        icon: Icon(Icons.arrow_back_ios),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                       ),
                       Icon(
                         Icons.favorite_border,
@@ -172,20 +173,20 @@ class _DetailScreenState extends State<DetailScreen> {
                     weight: FontWeight.w400,
                     textAlign: TextAlign.start,
                   ),
+                  AppButton(
+                      bgColor: vermilion,
+                      borderRadius: 30,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      onTap: () {
+                        // Navigator.pushNamed(context, Routes.home);
+                      },
+                      text: "Add to cart ",
+                      textColor: athens_gray)
                 ],
               ),
             ),
           ),
-          AppButton(
-              bgColor: vermilion,
-              borderRadius: 30,
-              fontSize: 17,
-              fontWeight: FontWeight.w600,
-              onTap: () {
-                // Navigator.pushNamed(context, Routes.home);
-              },
-              text: "Add to cart ",
-              textColor: athens_gray)
         ],
       ),
     );
