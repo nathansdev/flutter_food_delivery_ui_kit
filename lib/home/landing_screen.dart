@@ -56,6 +56,16 @@ class _LandingScreenState extends State<LandingScreen>
         scale: _menuScaleAnimation,
         child: NavigationScreen(
           collabsed: isCollapsed,
+          onTap: () {
+            setState(() {
+              if (isCollapsed)
+                _controller.forward();
+              else
+                _controller.reverse();
+
+              isCollapsed = !isCollapsed;
+            });
+          },
         ),
       ),
     );
