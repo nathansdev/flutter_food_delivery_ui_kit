@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_food_delivery_app/cart/cart_screen.dart';
+import 'package:flutter_ui_food_delivery_app/cart/payment_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/detail_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/landing_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/search_screen.dart';
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
         Routes.intro: (context) => IntroScreen(),
         Routes.detail: (context) => DetailScreen(),
         Routes.search: (context) => SearchScreen(),
-        Routes.profile: (context) => ProfilePage()
+        Routes.profile: (context) => ProfilePage(),
+        Routes.cart: (context) => CartScreen(),
+        Routes.payment: (context) => PaymentScreen()
       },
     );
   }
