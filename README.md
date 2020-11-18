@@ -1,10 +1,16 @@
 # Food Delivery App - Flutter UI
 
-![App UI](screenshots/cover.png)
+<img src = "screenshots/banner_screen.jpg">
 
 - Screens
 
-<img src = "screenshots/banner_screen.jpg" width=220><img src = "screenshots/cart_payment_screen.jpg" width=220><img src = "screenshots/home_detail_screen.jpg" width=220><img src = "screenshots/onboard_screen.jpg" width=220><img src = "screenshots/search_menu_screen.jpg" width=220>
+<img src = "screenshots/cart_payment_screen.jpg">
+
+<img src = "screenshots/home_detail_screen.jpg">
+
+<img src = "screenshots/onboard_screen.jpg">
+
+<img src = "screenshots/search_menu_screen.jpg">
 
 ## Design
 
