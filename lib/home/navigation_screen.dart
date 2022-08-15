@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
-import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class NavigationScreen extends StatefulWidget {
-  final bool collabsed;
-  final VoidCallback onTap;
+  final bool? collabsed;
+  final VoidCallback? onTap;
   NavigationScreen({this.collabsed, this.onTap});
 
   @override
@@ -32,13 +31,13 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     double sizeWidth = MediaQuery.of(context).size.width;
-    double sizeHeight = MediaQuery.of(context).size.height;
+    // double sizeHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
         decoration: BoxDecoration(
             color: vermilion,
-            borderRadius: BorderRadius.circular(widget.collabsed ? 24 : 0)),
+            borderRadius: BorderRadius.circular(widget.collabsed! ? 24 : 0)),
         child: Column(
           children: [
             Expanded(
@@ -51,7 +50,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
-                        widget.onTap();
+                        widget.onTap!();
                         Navigator.of(context)
                             .pushNamed("/" + options[index].title.toString());
                       },

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/utils/routes.dart';
@@ -7,7 +5,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class IntroScreen extends StatelessWidget {
-  const IntroScreen({Key key}) : super(key: key);
+  const IntroScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

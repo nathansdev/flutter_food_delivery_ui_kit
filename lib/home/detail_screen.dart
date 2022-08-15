@@ -6,7 +6,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class DetailScreen extends StatefulWidget {
-  final Food food;
+  final Food? food;
   DetailScreen({this.food});
 
   @override
@@ -14,7 +14,7 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
@@ -32,7 +32,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 

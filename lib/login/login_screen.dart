@@ -4,7 +4,7 @@ import 'package:flutter_ui_food_delivery_app/login/sign_up_input_screen.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();

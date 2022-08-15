@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppInputTextInline extends StatefulWidget {
-  final TextEditingController controller;
-  final String hint;
-  final bool enable;
+  final TextEditingController? controller;
+  final String? hint;
+  final bool? enable;
   const AppInputTextInline({this.controller, this.hint, this.enable});
 
   @override

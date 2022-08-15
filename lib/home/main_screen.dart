@@ -4,8 +4,8 @@ import 'package:flutter_ui_food_delivery_app/home/home_screen.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
-  final VoidCallback onTap;
-  final bool collabsed;
+  final VoidCallback? onTap;
+  final bool? collabsed;
   MainScreen({this.onTap, this.collabsed});
 
   @override
@@ -66,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.collabsed ? 24 : 0)),
+            borderRadius: BorderRadius.circular(widget.collabsed! ? 24 : 0)),
         child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 24),

@@ -5,7 +5,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key key}) : super(key: key);
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -159,14 +159,14 @@ class _ProfilePageState extends State<ProfilePage> {
                               value: 2,
                               activeColor: vermilion,
                               groupValue: "",
-                              onChanged: (val) {},
+                              onChanged: (dynamic val) {},
                             ),
                             Container(
                                 padding: EdgeInsets.all(16),
                                 decoration: BoxDecoration(
                                     color: methods[index].color,
                                     borderRadius: BorderRadius.circular(16)),
-                                child: SvgPicture.asset(methods[index].image)),
+                                child: SvgPicture.asset(methods[index].image!)),
                             SizedBox(
                               width: 10,
                             ),
@@ -201,8 +201,8 @@ class _ProfilePageState extends State<ProfilePage> {
 }
 
 class PaymentMethod {
-  final String image;
-  final String title;
-  final Color color;
+  final String? image;
+  final String? title;
+  final Color? color;
   PaymentMethod({this.color, this.image, this.title});
 }

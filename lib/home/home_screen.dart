@@ -6,7 +6,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/food_item_widget.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen>
   List<Widget> tabs = [];
   List<Widget> contents = [];
   TextEditingController _controller = TextEditingController();
-  TabController _tabController;
+  TabController? _tabController;
   int selectedIndex = 0;
 
   @override
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void dispose() {
     _controller.dispose();
-    _tabController.dispose();
+    _tabController!.dispose();
     super.dispose();
   }
 
@@ -155,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen>
             onTap: (index) {
               setState(() {
                 selectedIndex = index;
-                _tabController.animateTo(index);
+                _tabController!.animateTo(index);
               });
             },
           ),
@@ -173,8 +173,8 @@ class _HomeScreenState extends State<HomeScreen>
 }
 
 class Food {
-  final String name;
-  final int id;
-  final String image;
+  final String? name;
+  final int? id;
+  final String? image;
   Food({this.name, this.id, this.image});
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-  final String text;
-  final double borderRadius;
-  final Color bgColor;
-  final Color textColor;
-  final double fontSize;
-  final FontWeight fontWeight;
-  final VoidCallback onTap;
+  final String? text;
+  final double? borderRadius;
+  final Color? bgColor;
+  final Color? textColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final VoidCallback? onTap;
   const AppButton(
       {this.text,
       this.fontSize,
@@ -26,9 +26,9 @@ class AppButton extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-            color: bgColor, borderRadius: BorderRadius.circular(borderRadius)),
+            color: bgColor, borderRadius: BorderRadius.circular(borderRadius!)),
         child: Text(
-          text,
+          text!,
           textAlign: TextAlign.center,
           style: TextStyle(color: textColor, fontSize: fontSize),
         ),

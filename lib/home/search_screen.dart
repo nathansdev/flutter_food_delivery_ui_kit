@@ -5,7 +5,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/food_item_widget.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({Key key}) : super(key: key);
+  SearchScreen({Key? key}) : super(key: key);
 
   @override
   _SearchScreenState createState() => _SearchScreenState();

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 
 class SearchBox extends StatefulWidget {
-  final TextEditingController controller;
-  final String hint;
-  final bool enable;
-  final VoidCallback onTap;
+  final TextEditingController? controller;
+  final String? hint;
+  final bool? enable;
+  final VoidCallback? onTap;
   
   SearchBox({this.controller, this.hint, this.enable, this.onTap});
 

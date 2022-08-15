@@ -5,7 +5,7 @@ import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class FoodItemWidget extends StatelessWidget {
-  final Food food;
+  final Food? food;
   const FoodItemWidget({this.food});
 
   @override
@@ -68,7 +68,7 @@ class FoodItemWidget extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage(food.image),
+              backgroundImage: AssetImage(food!.image!),
             )
           ],
         ),
