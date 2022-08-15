@@ -42,19 +42,19 @@ class _MainScreenState extends State<MainScreen> {
           backgroundColor: concrete,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              title: Text("Home"),
+              label: "Home",
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              title: Text("Search"),
+              label: "Search",
               icon: Icon(Icons.favorite_border),
             ),
             BottomNavigationBarItem(
-              title: Text("Profile"),
+              label: "Profile",
               icon: Icon(Icons.account_circle),
             ),
             BottomNavigationBarItem(
-              title: Text("History"),
+              label: "History",
               icon: Icon(Icons.history),
             ),
           ],
