@@ -3,7 +3,7 @@ import 'package:flutter_ui_food_delivery_app/home/main_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/navigation_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  LandingScreen();
+  const LandingScreen({Key? key}) : super(key: key);
 
   @override
   _LandingScreenState createState() => _LandingScreenState();
@@ -12,12 +12,12 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen>
     with SingleTickerProviderStateMixin {
   bool isCollapsed = true;
-  double screenWidth, screenHeight;
+  late double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 300);
-  AnimationController _controller;
-  Animation<double> _scaleAnimation;
-  Animation<double> _menuScaleAnimation;
-  Animation<Offset> _slideAnimation;
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+  late Animation<double> _menuScaleAnimation;
+  late Animation<Offset> _slideAnimation;
 
   @override
   void initState() {
@@ -26,8 +26,9 @@ class _LandingScreenState extends State<LandingScreen>
     _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(_controller);
     _menuScaleAnimation =
         Tween<double>(begin: 0.5, end: 1).animate(_controller);
-    _slideAnimation = Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
-        .animate(_controller);
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
+            .animate(_controller);
   }
 
   @override
@@ -58,10 +59,11 @@ class _LandingScreenState extends State<LandingScreen>
           collabsed: isCollapsed,
           onTap: () {
             setState(() {
-              if (isCollapsed)
+              if (isCollapsed) {
                 _controller.forward();
-              else
+              } else {
                 _controller.reverse();
+              }
 
               isCollapsed = !isCollapsed;
             });
@@ -83,10 +85,11 @@ class _LandingScreenState extends State<LandingScreen>
             collabsed: isCollapsed,
             onTap: () {
               setState(() {
-                if (isCollapsed)
+                if (isCollapsed) {
                   _controller.forward();
-                else
+                } else {
                   _controller.reverse();
+                }
 
                 isCollapsed = !isCollapsed;
               });

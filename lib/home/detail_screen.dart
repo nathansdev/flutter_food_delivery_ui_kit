@@ -6,15 +6,16 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_button.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class DetailScreen extends StatefulWidget {
-  final Food food;
-  DetailScreen({this.food});
+  final Food? food;
+
+  const DetailScreen({Key? key, this.food}) : super(key: key);
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  PageController _pageController;
+  PageController? _pageController;
   int currentPageValue = 0;
   int previousPageValue = 0;
   double _moveBar = 0.0;
@@ -32,7 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController!.dispose();
     super.dispose();
   }
 
@@ -61,7 +62,7 @@ class _DetailScreenState extends State<DetailScreen> {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -72,21 +73,21 @@ class _DetailScreenState extends State<DetailScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_back_ios),
+                        icon: const Icon(Icons.arrow_back_ios),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
                       ),
-                      Icon(
+                      const Icon(
                         Icons.favorite_border,
                         color: Colors.black,
                       ),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                     height: MediaQuery.of(context).size.height * 0.3,
                     child: PageView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemBuilder: (context, index) {
                         return images[index];
                       },
@@ -104,37 +105,37 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: <Widget>[
                         for (int i = 0; i < images.length; i++)
                           if (i == currentPageValue) ...[
-                            CircleDotWidget(
+                            const CircleDotWidget(
                               isActive: true,
                               color: vermilion,
                               borderColor: vermilion,
                             )
                           ] else
-                            CircleDotWidget(
+                            const CircleDotWidget(
                               isActive: false,
-                              color: silver_one,
-                              borderColor: silver_one,
+                              color: silverOne,
+                              borderColor: silverOne,
                             ),
                       ],
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(16)),
-                  AppText(
+                  const Padding(padding: EdgeInsets.all(16)),
+                  const AppText(
                     text: "Veggie tomato mix",
                     size: 28,
                     color: Colors.black,
                     weight: FontWeight.w600,
                     textAlign: TextAlign.center,
                   ),
-                  AppText(
+                  const AppText(
                     text: "N1,900",
                     size: 22,
                     color: vermilion,
                     weight: FontWeight.w700,
                     textAlign: TextAlign.center,
                   ),
-                  Padding(padding: EdgeInsets.all(16)),
-                  Align(
+                  const Padding(padding: EdgeInsets.all(16)),
+                  const Align(
                     alignment: Alignment.centerLeft,
                     child: AppText(
                       text: "Delivery info",
@@ -144,8 +145,8 @@ class _DetailScreenState extends State<DetailScreen> {
                       textAlign: TextAlign.start,
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(4)),
-                  AppText(
+                  const Padding(padding: EdgeInsets.all(4)),
+                  const AppText(
                     text:
                         "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm",
                     size: 15,
@@ -153,8 +154,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     weight: FontWeight.w400,
                     textAlign: TextAlign.start,
                   ),
-                  Padding(padding: EdgeInsets.all(16)),
-                  Align(
+                  const Padding(padding: EdgeInsets.all(16)),
+                  const Align(
                     alignment: Alignment.centerLeft,
                     child: AppText(
                       text: "Return policy",
@@ -164,8 +165,8 @@ class _DetailScreenState extends State<DetailScreen> {
                       textAlign: TextAlign.start,
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(4)),
-                  AppText(
+                  const Padding(padding: EdgeInsets.all(4)),
+                  const AppText(
                     text:
                         "All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.",
                     size: 15,
@@ -182,7 +183,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         // Navigator.pushNamed(context, Routes.home);
                       },
                       text: "Add to cart ",
-                      textColor: athens_gray)
+                      textColor: athensGray)
                 ],
               ),
             ),

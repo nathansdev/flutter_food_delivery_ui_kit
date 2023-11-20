@@ -6,7 +6,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_input.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class SignUpInputScreen extends StatefulWidget {
-  SignUpInputScreen();
+  const SignUpInputScreen({Key? key}) : super(key: key);
 
   @override
   _SignUpInputScreenState createState() => _SignUpInputScreenState();
@@ -34,11 +34,11 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 24),
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 42),
+              padding: const EdgeInsets.only(bottom: 42),
               child: AppInputText(
                 controller: nameController,
                 enable: true,
@@ -47,7 +47,7 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 42),
+              padding: const EdgeInsets.only(bottom: 42),
               child: AppInputText(
                 controller: emailController,
                 enable: true,
@@ -56,7 +56,7 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 42),
+              padding: const EdgeInsets.only(bottom: 42),
               child: AppInputText(
                 controller: passwordController,
                 enable: true,
@@ -64,7 +64,7 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
                 title: "Password ",
               ),
             ),
-            Align(
+            const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
                 padding: EdgeInsets.only(bottom: 42),
@@ -86,7 +86,7 @@ class _SignUpInputScreenState extends State<SignUpInputScreen> {
                   Navigator.pushNamed(context, Routes.home);
                 },
                 text: "Sign-up",
-                textColor: athens_gray)
+                textColor: athensGray)
           ],
         ),
       ),

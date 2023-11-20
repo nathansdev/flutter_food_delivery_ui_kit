@@ -3,11 +3,14 @@ import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class AppInputText extends StatefulWidget {
-  final TextEditingController controller;
-  final String hint;
-  final String title;
-  final bool enable;
-  const AppInputText({this.title, this.controller, this.hint, this.enable});
+  final TextEditingController? controller;
+  final String? hint;
+  final String? title;
+  final bool? enable;
+
+  const AppInputText(
+      {Key? key, this.controller, this.hint, this.title, this.enable})
+      : super(key: key);
 
   @override
   _AppInputTextState createState() => _AppInputTextState();
@@ -26,7 +29,7 @@ class _AppInputTextState extends State<AppInputText> {
           weight: FontWeight.w600,
           textAlign: TextAlign.start,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         TextField(

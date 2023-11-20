@@ -5,8 +5,8 @@ import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class FoodItemWidget extends StatelessWidget {
-  final Food food;
-  const FoodItemWidget({this.food});
+  final Food? food;
+  const FoodItemWidget({Key? key, this.food}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class FoodItemWidget extends StatelessWidget {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.31,
-        padding: EdgeInsets.all(6),
+        padding: const EdgeInsets.all(6),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
@@ -32,18 +32,18 @@ class FoodItemWidget extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.5,
                 height: MediaQuery.of(context).size.height * 0.27,
                 decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(color: Colors.white, offset: Offset(0, 0))
                     ],
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30)),
-                margin: EdgeInsets.all(4),
+                margin: const EdgeInsets.all(4),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: AppText(
                         text: "Veggie tomato mix",
                         color: black_90,
@@ -53,7 +53,7 @@ class FoodItemWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: AppText(
                         text: "N1,900",
                         color: vermilion,
@@ -68,7 +68,7 @@ class FoodItemWidget extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage(food.image),
+              backgroundImage: AssetImage(food!.image!),
             )
           ],
         ),
