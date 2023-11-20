@@ -6,8 +6,10 @@ class SearchBox extends StatefulWidget {
   final String? hint;
   final bool? enable;
   final VoidCallback? onTap;
-  
-  SearchBox({this.controller, this.hint, this.enable, this.onTap});
+
+  const SearchBox(
+      {Key? key, this.controller, this.hint, this.enable, this.onTap})
+      : super(key: key);
 
   @override
   _SearchBoxState createState() => _SearchBoxState();
@@ -18,27 +20,27 @@ class _SearchBoxState extends State<SearchBox> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
-      child: Container(
+      child: SizedBox(
         height: 60,
         child: TextField(
           enabled: widget.enable,
           controller: widget.controller,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
               hintText: widget.hint,
-              hintStyle: TextStyle(color: black_50),
-              prefixIcon: Icon(
+              hintStyle: const TextStyle(color: black_50),
+              prefixIcon: const Icon(
                 Icons.search,
                 color: Colors.black,
               ),
               fillColor: gallery,
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0))),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0))),
-              disabledBorder: OutlineInputBorder(
+              disabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0))),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30.0)))),
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:flutter_ui_food_delivery_app/login/sign_up_input_screen.dart';
 import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -19,22 +19,20 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SingleChildScrollView(
           child: Stack(
             children: [
-              Container(
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.4,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.6,
-                      child: TabBarView(
-                          children: [LoginInputScreen(), SignUpInputScreen()]),
-                    ),
-                  ],
-                ),
+              Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    child: const TabBarView(
+                        children: [LoginInputScreen(), SignUpInputScreen()]),
+                  ),
+                ],
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(offset: Offset(0, 4), color: Colors.white)
@@ -52,10 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 150,
                       ),
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        padding: EdgeInsets.symmetric(horizontal: 50),
                         child: TabBar(
                           tabs: [
                             Tab(

@@ -3,7 +3,7 @@ import 'package:flutter_ui_food_delivery_app/home/main_screen.dart';
 import 'package:flutter_ui_food_delivery_app/home/navigation_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  LandingScreen();
+  const LandingScreen({Key? key}) : super(key: key);
 
   @override
   _LandingScreenState createState() => _LandingScreenState();
@@ -26,8 +26,9 @@ class _LandingScreenState extends State<LandingScreen>
     _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(_controller);
     _menuScaleAnimation =
         Tween<double>(begin: 0.5, end: 1).animate(_controller);
-    _slideAnimation = Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
-        .animate(_controller);
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
+            .animate(_controller);
   }
 
   @override
@@ -58,10 +59,11 @@ class _LandingScreenState extends State<LandingScreen>
           collabsed: isCollapsed,
           onTap: () {
             setState(() {
-              if (isCollapsed)
+              if (isCollapsed) {
                 _controller.forward();
-              else
+              } else {
                 _controller.reverse();
+              }
 
               isCollapsed = !isCollapsed;
             });
@@ -83,10 +85,11 @@ class _LandingScreenState extends State<LandingScreen>
             collabsed: isCollapsed,
             onTap: () {
               setState(() {
-                if (isCollapsed)
+                if (isCollapsed) {
                   _controller.forward();
-                else
+                } else {
                   _controller.reverse();
+                }
 
                 isCollapsed = !isCollapsed;
               });

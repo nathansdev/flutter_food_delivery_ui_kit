@@ -5,7 +5,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/food_item_widget.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -42,7 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
         children: [
           Container(
             color: gallery,
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             child: Column(
               children: [
                 SizedBox(
@@ -52,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_ios,
                         color: Colors.black,
                       ),
@@ -63,11 +63,11 @@ class _SearchScreenState extends State<SearchScreen> {
                     Expanded(
                       child: TextField(
                         controller: controller,
-                        decoration: InputDecoration.collapsed(
+                        decoration: const InputDecoration.collapsed(
                           hintText: "Search",
                           border: InputBorder.none,
                         ),
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                       ),
                     ),
                   ],
@@ -78,15 +78,15 @@ class _SearchScreenState extends State<SearchScreen> {
           Container(
             margin:
                 EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: alabaster,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30))),
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: AppText(
                     text: "Found  6 results",
                     size: 28,
@@ -98,7 +98,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 Flexible(
                     child: GridView.builder(
                   shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 2 / 3,
                       crossAxisSpacing: 4.0,

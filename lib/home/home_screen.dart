@@ -6,7 +6,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/food_item_widget.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen>
   List<Food> foods = [];
   List<Widget> tabs = [];
   List<Widget> contents = [];
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   TabController? _tabController;
   int selectedIndex = 0;
 
@@ -32,16 +32,16 @@ class _HomeScreenState extends State<HomeScreen>
     foods.add(Food(id: 7, name: "", image: "assets/images/foods/three.svg"));
     foods.add(Food(id: 8, name: "", image: "assets/images/foods/four.svg"));
 
-    tabs.add(Tab(
+    tabs.add(const Tab(
       text: "Foods",
     ));
-    tabs.add(Tab(
+    tabs.add(const Tab(
       text: "Drinks",
     ));
-    tabs.add(Tab(
+    tabs.add(const Tab(
       text: "Snacks",
     ));
-    tabs.add(Tab(
+    tabs.add(const Tab(
       text: "Sauce",
     ));
     contents.add(ListView.builder(
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen>
       itemCount: foods.length,
     ));
     contents.add(Container(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: ListView.builder(
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) {
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen>
           itemCount: foods.length,
         )));
     contents.add(Container(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: ListView.builder(
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) {
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen>
           itemCount: foods.length,
         )));
     contents.add(Container(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: ListView.builder(
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) {
@@ -110,11 +110,11 @@ class _HomeScreenState extends State<HomeScreen>
         shrinkWrap: true,
         children: [
           Row(
-            children: [
+            children: const [
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: AppText(
                     text: "Delicious food for you",
                     size: 34,
@@ -147,8 +147,9 @@ class _HomeScreenState extends State<HomeScreen>
             isScrollable: true,
             tabs: tabs,
             labelColor: vermilion,
-            labelStyle: TextStyle(color: vermilion, fontSize: 17),
-            unselectedLabelStyle: TextStyle(color: vermilion, fontSize: 17),
+            labelStyle: const TextStyle(color: vermilion, fontSize: 17),
+            unselectedLabelStyle:
+                const TextStyle(color: vermilion, fontSize: 17),
             unselectedLabelColor: manatee,
             indicatorColor: vermilion,
             controller: _tabController,

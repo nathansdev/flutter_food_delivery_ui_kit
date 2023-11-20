@@ -8,14 +8,17 @@ class AppButton extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final VoidCallback? onTap;
+
   const AppButton(
-      {this.text,
-      this.fontSize,
-      this.textColor,
+      {Key? key,
+      this.text,
+      this.borderRadius,
       this.bgColor,
-      this.onTap,
+      this.textColor,
+      this.fontSize,
       this.fontWeight,
-      this.borderRadius});
+      this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,8 @@ class AppButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.8,
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-        padding: EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
             color: bgColor, borderRadius: BorderRadius.circular(borderRadius!)),
         child: Text(

@@ -6,7 +6,7 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_input.dart';
 import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 
 class LoginInputScreen extends StatefulWidget {
-  LoginInputScreen();
+  const LoginInputScreen({Key? key}) : super(key: key);
 
   @override
   _LoginInputScreenState createState() => _LoginInputScreenState();
@@ -30,11 +30,11 @@ class _LoginInputScreenState extends State<LoginInputScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 24),
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 42),
+              padding: const EdgeInsets.only(bottom: 42),
               child: AppInputText(
                 controller: emailController,
                 enable: true,
@@ -43,7 +43,7 @@ class _LoginInputScreenState extends State<LoginInputScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 42),
+              padding: const EdgeInsets.only(bottom: 42),
               child: AppInputText(
                 controller: passwordController,
                 enable: true,
@@ -51,7 +51,7 @@ class _LoginInputScreenState extends State<LoginInputScreen> {
                 hint: "*********",
               ),
             ),
-            Align(
+            const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
                 padding: EdgeInsets.only(bottom: 42),
@@ -73,7 +73,7 @@ class _LoginInputScreenState extends State<LoginInputScreen> {
                   Navigator.pushNamed(context, Routes.home);
                 },
                 text: "Login",
-                textColor: athens_gray)
+                textColor: athensGray)
           ],
         ),
       ),

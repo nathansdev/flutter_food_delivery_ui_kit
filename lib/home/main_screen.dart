@@ -6,7 +6,8 @@ import 'package:flutter_ui_food_delivery_app/utils/colors.dart';
 class MainScreen extends StatefulWidget {
   final VoidCallback? onTap;
   final bool? collabsed;
-  MainScreen({this.onTap, this.collabsed});
+
+  const MainScreen({Key? key, this.onTap, this.collabsed}) : super(key: key);
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -24,10 +25,10 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    widgets.add(HomeScreen());
-    widgets.add(HomeScreen());
-    widgets.add(HomeScreen());
-    widgets.add(HomeScreen());
+    widgets.add(const HomeScreen());
+    widgets.add(const HomeScreen());
+    widgets.add(const HomeScreen());
+    widgets.add(const HomeScreen());
     super.initState();
   }
 
@@ -69,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
             borderRadius: BorderRadius.circular(widget.collabsed! ? 24 : 0)),
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
                 SizedBox(

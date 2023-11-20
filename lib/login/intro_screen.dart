@@ -10,12 +10,12 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: sunset_orange,
+      backgroundColor: sunsetOrange,
       body: Stack(
         children: [
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Padding(
@@ -26,18 +26,18 @@ class IntroScreen extends StatelessWidget {
                     width: 75,
                     height: 75,
                     child: Image.asset("assets/icons/bell.png"),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: AppText(
                   size: 65,
                   color: Colors.white,
@@ -66,7 +66,7 @@ class IntroScreen extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.1,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[vermilion_10, vermilion_100],
                   ),

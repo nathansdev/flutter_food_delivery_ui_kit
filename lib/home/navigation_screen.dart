@@ -6,7 +6,9 @@ import 'package:flutter_ui_food_delivery_app/widgets/custom_text.dart';
 class NavigationScreen extends StatefulWidget {
   final bool? collabsed;
   final VoidCallback? onTap;
-  NavigationScreen({this.collabsed, this.onTap});
+
+  const NavigationScreen({Key? key, this.collabsed, this.onTap})
+      : super(key: key);
 
   @override
   _NavigationScreenState createState() => _NavigationScreenState();
@@ -46,7 +48,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 alignment: Alignment.center,
                 child: ListView.separated(
                   shrinkWrap: true,
-                  padding: EdgeInsets.all(32),
+                  padding: const EdgeInsets.all(32),
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
@@ -55,11 +57,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
                             .pushNamed("/" + options[index].title.toString());
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Row(
                           children: [
                             SvgPicture.asset(options[index].assetPath),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             ),
                             AppText(
@@ -81,7 +83,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       child: Container(
                         width: sizeWidth * 0.5,
                         height: 1,
-                        color: athens_gray_one,
+                        color: athensGrayOne,
                       ),
                     );
                   },
@@ -92,9 +94,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                padding: EdgeInsets.all(32),
+                padding: const EdgeInsets.all(32),
                 child: Row(
-                  children: [
+                  children: const [
                     AppText(
                       text: "Sign-out",
                       size: 17,
@@ -121,7 +123,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 }
 
 class NavOption {
-  final title;
-  final assetPath;
-  NavOption({this.title, this.assetPath});
+  final String? title;
+  final String assetPath;
+  NavOption({this.title, required this.assetPath});
 }
